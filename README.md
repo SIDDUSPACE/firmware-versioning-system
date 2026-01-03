@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SIDDUSPACE/firmware-versioning-system/dev/docs/banner.svg" width="90%" />
+  <img src="https://raw.githubusercontent.com/SIDDUSPACE/firmware-versioning-system/dev/docs/banner.png" width="90%" />
 </p>
 
 <h1 align="center">🔁 Git-Based Firmware Backup & Rollback System</h1>
