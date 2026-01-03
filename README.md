@@ -1,8 +1,3 @@
-## 🔀 Branch Strategy
-
-- **dev (default)** → Active development, documentation, rollback workflow
-- **master** → Last known stable firmware (`v1.0-stable`)
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/SIDDUSPACE/firmware-versioning-system/dev/docs/banner.png" width="90%" />
 </p>
@@ -33,7 +28,10 @@ Stable and experimental firmware versions are isolated using **branches**, while
 **Git tags** are used to mark release points for **instant rollback**.
 
 ---
+## 🔀 Branch Strategy
 
+- **dev (default)** → Active development, documentation, rollback workflow
+- **master** → Last known stable firmware (`v1.0-stable`)
 ## ⚠️ Problem Statement
 
 In embedded systems:
