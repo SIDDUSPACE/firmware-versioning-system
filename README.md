@@ -1,59 +1,65 @@
-# Git-Based Firmware Backup & Rollback System
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SIDDUSPACE/firmware-versioning-system/dev/docs/banner.svg" width="90%" />
+</p>
 
-## Overview
-This project demonstrates a Git-based firmware versioning, backup, and rollback strategy
-commonly used in embedded systems development. Stable and experimental firmware versions
-are tracked using Git branches and tags, enabling instant recovery from faulty updates.
+<h1 align="center">🔁 Git-Based Firmware Backup & Rollback System</h1>
 
-## Problem Statement
-In embedded systems, faulty firmware updates can lead to system instability or complete
-device failure. Manual recovery is time-consuming and error-prone without proper version
-control.
+<p align="center">
+  <b>Embedded Firmware Versioning • Safe Rollback • Git Workflow</b>
+</p>
 
-## Solution
-A structured Git workflow is used:
-- `master` branch contains stable, flashable firmware
-- `dev` branch is used for experimental development
-- Git tags mark firmware release versions (`v1.0-stable`, `v1.1-beta`)
-- A rollback script allows fast recovery to known-good firmware
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-C-blue" />
+  <img src="https://img.shields.io/badge/Domain-Embedded%20Systems-green" />
+  <img src="https://img.shields.io/badge/Versioning-Git-important" />
+  <img src="https://img.shields.io/badge/Status-Completed-success" />
+</p>
 
-## Project Structure
-# Git-Based Firmware Backup & Rollback System
+---
 
-## Overview
-This project demonstrates a Git-based firmware versioning, backup, and rollback strategy
-commonly used in embedded systems development. Stable and experimental firmware versions
-are tracked using Git branches and tags, enabling instant recovery from faulty updates.
+## 📌 Overview
 
-## Problem Statement
-In embedded systems, faulty firmware updates can lead to system instability or complete
-device failure. Manual recovery is time-consuming and error-prone without proper version
-control.
+Firmware updates are risky — a single faulty release can cause system instability
+or complete device failure.  
+This project demonstrates a **Git-based firmware versioning, backup, and rollback
+strategy** inspired by **real embedded systems development workflows**.
 
-## Solution
-A structured Git workflow is used:
-- `master` branch contains stable, flashable firmware
-- `dev` branch is used for experimental development
-- Git tags mark firmware release versions (`v1.0-stable`, `v1.1-beta`)
-- A rollback script allows fast recovery to known-good firmware
+Stable and experimental firmware versions are isolated using **branches**, while
+**Git tags** are used to mark release points for **instant rollback**.
 
-## Project Structure
-firmware-versioning-system/
-├── firmware/
-│ ├── main.c
-│ ├── gpio.c
-│ ├── gpio.h
-│ └── config.h
-├── scripts/
-│ └── rollback.sh
-├── docs/
-│ └── versioning_strategy.md
-├── README.md
-├── Makefile
-└── .gitignore
+---
 
-## Rollback Procedure
-1. Identify the last stable firmware tag
-2. Roll back using:
-```bash
-git checkout v1.0-stable
+## ⚠️ Problem Statement
+
+In embedded systems:
+
+- Faulty firmware updates can brick devices
+- Manual recovery is time-consuming and error-prone
+- Without version control, rollback is unreliable
+- No traceability between firmware versions
+
+---
+
+## ✅ Solution Approach
+
+A structured Git workflow is implemented:
+
+- **`master` branch** → Stable, flashable firmware  
+- **`dev` branch** → Experimental / risky development  
+- **Git tags** → Firmware release versions  
+  - `v1.0-stable` → Known-good firmware  
+  - `v1.1-beta` → Experimental / faulty firmware  
+- **Rollback script** → Fast recovery using tagged releases  
+
+This mirrors **industry-standard embedded firmware release practices**.
+
+---
+
+## 🔄 Firmware Release & Rollback Flow
+
+```mermaid
+flowchart LR
+    Dev[dev branch] -->|Experimental Commit| Beta[v1.1-beta]
+    Beta -->|Failure Detected| Rollback[Rollback Script]
+    Rollback --> Stable[v1.0-stable]
+    Stable --> Master[master branch]
