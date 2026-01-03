@@ -6,6 +6,8 @@ int main(void)
     while (1)
     {
         gpio_toggle();
+        gpio_toggle();
+        gpio_toggle();
     }
 
     return 0;
